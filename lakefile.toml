@@ -1,0 +1,25 @@
+name = "lean-cyclo"
+version = "0.1.0"
+description = "AI-first cyclomatic complexity linter and CLI for Lean 4"
+keywords = ["linter", "cyclomatic-complexity", "static-analysis", "ai", "devtool", "code-quality"]
+license = "Apache-2.0"
+licenseFiles = ["LICENSE"]
+readmeFile = "README.md"
+reservoir = true
+
+defaultTargets = ["Cyclo", "cyclo"]
+lintDriver = "cyclo"
+testDriver = "tests"
+
+[[lean_lib]]
+name = "Cyclo"
+
+[[lean_exe]]
+name = "cyclo"
+root = "Main"
+supportInterpreter = true
+
+[[lean_exe]]
+name = "tests"
+root = "Tests"
+supportInterpreter = true
